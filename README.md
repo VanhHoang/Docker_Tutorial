@@ -11,3 +11,7 @@
 # If Windows Subsystem for Linus off
 * Click "Windows" on your keybroad.
 * Search "Turn Windows features on or off" 
+
+# Setup WSL
+* Open "wsl_update_x64"
+* 

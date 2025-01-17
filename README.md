@@ -3,15 +3,33 @@
 # Download Docker Desktop
 * https://www.docker.com/get-started/
 
-# Download WSL 2 (system requirments)
-* https://learn.microsoft.com/en-us/windows/wsl/install-manual
-* Choose "Step 4"
-* Choose "WSL2 Linux kernel update package for x64 machines"
+# Download WSL 
+* wsl --install
 
-# If Windows Subsystem for Linus off
-* Click "Windows" on your keybroad.
-* Search "Turn Windows features on or off" 
+# If error Ubuntu 
+* Check "Task Manager" -> "Peformance" -> "CPU"
+* If "Virtualization: 'Disable' "
+=> Go BIOS and Enable Visualization
 
-# Setup WSL
-* Open "wsl_update_x64"
-* 
+# CMD Docker
+* List : ls
+* Read file: cat .\Dockerfile
+* Build image: docker build -t welcome-to-docker .
+* Run Docker: docker run file.py
+* Run in Docker: docker run -it file.py bash
+
+# HUB DOCKER
+* FROM ubuntu
+
+# Dockerfile
+
+FROM ubuntu
+
+WORKDIR /src
+
+RUN apt-get update
+RUN apt-get -y install python3
+
+COPY file.py ./file.py
+
+CMD ["python3", "file.py"]
